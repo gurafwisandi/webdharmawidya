@@ -406,7 +406,7 @@
                             <div class="entry-img">
                                 @if ($item->created_at)
                                     <div class="entry-date"><span
-                                            class="month">{{ date('F Y', strtotime($item->created_at)) }}</span><span
+                                            class="month">{{ date('M Y', strtotime($item->created_at)) }}</span><span
                                             class="day">{{ date('d', strtotime($item->created_at)) }}</span>
                                     </div>
                                 @endif
