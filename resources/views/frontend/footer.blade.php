@@ -8,8 +8,6 @@
                             <h3>Contach</h3>
                         </div>
                         <div class="widget-content">
-                            {{-- <p>If you have any questions or need help, feel free to contact with our team.
-                            </p> --}}
                             <ul>
                                 <li class="phone"><a href="tel:+628119147278"><i
                                             class="fas fa-phone-alt"></i>62811-9147-278</a></li>
@@ -19,7 +17,6 @@
                                     class="fas fa-map-marker-alt"></i>get directions</a>
                         </div>
                     </div>
-                    <!--  End .col-lg-3-->
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3 offset-lg-0">
                     <div class="footer-widget widget-links">
@@ -28,7 +25,7 @@
                         </div>
                         <div class="widget-content">
                             <ul>
-                                <li><a href="{{ route('akademik.index', ['unit' => 'kb']) }}">KB</a></li>
+                                {{-- <li><a href="{{ route('akademik.index', ['unit' => 'kb']) }}">KB</a></li> --}}
                                 <li><a href="{{ route('akademik.index', ['unit' => 'tk']) }}">TK</a></li>
                                 <li>
                                     <a href="{{ route('akademik.index', ['unit' => 'sd']) }}">Sekolah Dasar (SD)</a>
@@ -54,8 +51,8 @@
                         </div>
                         <div class="widget-content">
                             <ul>
-                                <li><a href="">Multimedia</a></li>
-                                <li><a href="">Akuntansi</a></li>
+                                <li><a>Multimedia</a></li>
+                                <li><a>Akuntansi</a></li>
                             </ul>
                         </div>
                     </div>

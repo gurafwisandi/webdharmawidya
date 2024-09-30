@@ -4,7 +4,7 @@
         <div class="breadcrumb-wrap">
             <div class="container">
                 <ol class="breadcrumb d-flex">
-                    <li class="breadcrumb-item"><a href="/articles">blog</a></li>
+                    <li class="breadcrumb-item"><a href="/articles">Artikel</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $article->title }}</li>
                 </ol>
             </div>

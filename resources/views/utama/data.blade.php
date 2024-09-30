@@ -80,6 +80,7 @@
             </div>
         </div>
     </section>
+    {{-- label sekolah --}}
 
     {{-- sambutan --}}
     <section class="about about-2" id="about-2">
@@ -116,13 +117,6 @@
                         <div class="about-img-holder">
                             <div class="about-img"><img class="img-fluid" src="{{ asset('assets/files/ketua/ketua.jpg') }}"
                                     alt="about Image" />
-                                {{-- <div class="offer-banner">
-                                    <div class="banner-body">
-                                        <h3>{{ $founders ? $founders->name : '' }}</h3>
-                                        <p>Ketua</p>
-                                        <p class="price-info"><span class="currency">Yayasan</span></p>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -132,7 +126,7 @@
     </section>
     {{-- sambutan --}}
 
-    {{-- jenjang pendidikan ? --}}
+    {{-- jenjang pendidikan --}}
     <section class="services services-2 bg-gray" id="services-2">
         <div class="container">
             <div class="row">
@@ -245,8 +239,9 @@
             </div>
         </div>
     </section>
+    {{-- jenjang pendidikan --}}
 
-    {{-- metode pembelajaran ? --}}
+    {{-- metode pembelajaran --}}
     <section class="processes processes-3 bg-gray" id="processes-3">
         <div class="container">
             <div class="row">
@@ -284,6 +279,7 @@
             </div>
         </div>
     </section>
+    {{-- metode pembelajaran --}}
 
     {{-- galery --}}
     <section class="industries industries-1" id="industries-1">
@@ -356,7 +352,7 @@
     </section>
     {{-- galery --}}
 
-    {{-- ekstrakuler ? --}}
+    {{-- ekstrakuler --}}
     <section class="features features-2" id="features-2">
         <div class="container">
             <div class="row">
@@ -386,6 +382,7 @@
             </div>
         </div>
     </section>
+    {{-- ekstrakuler --}}
 
     {{-- articels --}}
     <section class="blog blog-grid blog-grid-1" id="blog-1">
@@ -438,17 +435,17 @@
                                 </div>
                                 <div class="entry-title">
                                     @php
-                                        $title = str_replace(' ', '-', $item->title);
+                                        $link = str_replace(' ', '-', $item->link);
                                     @endphp
                                     <h4><a
-                                            href="{{ route('articles.details', ['id' => $title]) }}">{{ $item->title }}</a>
+                                            href="{{ route('articles.details', ['id' => $link]) }}">{{ $item->title }}</a>
                                     </h4>
                                 </div>
                                 <div class="entry-bio" style="text-align: justify">
                                     <p>{!! substr($item->description, 0, 200) !!}</p>
                                 </div>
                                 <div class="entry-more">
-                                    <a class="btn" href="{{ route('articles.details', ['id' => $title]) }}">read
+                                    <a class="btn" href="{{ route('articles.details', ['id' => $link]) }}">read
                                         more <i class="icon-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -462,4 +459,52 @@
         </div>
     </section>
     {{-- articels --}}
+
+    {{-- comment --}}
+    <section class="testimonial testimonial-3" id="testimonial-3">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-12 col-lg-12">
+                    <h2 class="section-head">Apa Kata Orang Tua ?</h2>
+                    <div class="testimonials-holder">
+                        <div class="carousel owl-carousel custom-carousel" data-slider-id="1" data-slide="1"
+                            data-slide-rs="1" data-autoplay="true" data-nav="false" data-dots="false" data-space="0"
+                            data-loop="false" data-speed="800">
+                            @foreach ($comments as $item)
+                                <div class="testimonial-panel">
+                                    <div class="testimonial-body">
+                                        <div class="testimonial-content">
+                                            <p style="text-align: justify">{!! $item->description !!}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="testimonial-actions">
+                        <div class="testimonial-thumbs owl-thumbs" data-slider-id="1">
+                            <?php $no = 0; ?>
+                            @foreach ($comments as $item)
+                                <div class="testimonial-thumb owl-thumb-item {{ $no == 0 ? 'active' : '' }}">
+                                    <div class="thumb-img"> <img
+                                            src="{{ asset('assets/files/comment/' . $item->image) }}"
+                                            alt="{{ $item->name }}" /></div>
+                                    <div class="thumb-body">
+                                        <h3>{{ $item->name }}</h3>
+                                        <p>Wali Murid</p>
+                                    </div>
+                                </div>
+                                <?php $no++; ?>
+                            @endforeach
+                        </div>
+                        <div class="custom-navs">
+                            <a class="prev" href="javascript:void(0)"><i class="fas fa-arrow-left"></i></a>
+                            <a class="next" href="javascript:void(0)"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- comment --}}
 @endsection

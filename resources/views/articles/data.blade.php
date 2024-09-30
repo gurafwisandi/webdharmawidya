@@ -6,7 +6,7 @@
                 <div class="row mt-5">
                     <div class="col-12 col-lg-8 offset-lg-2">
                         <div class="heading heading-1 text--center">
-                            <p class="heading-subtitle">Blog Dharma Widya</p>
+                            <p class="heading-subtitle">Dharma Widya</p>
                             <h2 class="heading-title">Artikel Kegiatan sekolah serta prestasi</h2>
                         </div>
                     </div>

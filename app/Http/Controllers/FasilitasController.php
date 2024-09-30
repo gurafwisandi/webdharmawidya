@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FasilitasImageModel;
+use App\Models\FasilitasModel;
 use App\Models\SettingsModel;
 use Illuminate\Http\Request;
 
@@ -14,6 +16,8 @@ class FasilitasController extends Controller
     {
         $data = [
             'settings' => SettingsModel::firstorfail(),
+            'fasilitas' => FasilitasModel::firstorfail(),
+            'fasilitas_image' => FasilitasImageModel::all(),
         ];
         return view('tentang.fasilitas')->with($data);
     }

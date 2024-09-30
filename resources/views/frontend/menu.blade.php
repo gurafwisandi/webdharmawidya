@@ -33,7 +33,7 @@
         </div>
         <div class="block-right">
             <div class="top-bar-links-wrapper">
-                <a class="top-bar-link" href="{{ route('articles.index') }}">Blog</a>
+                <a class="top-bar-link" href="{{ route('articles.index') }}">Artikel</a>
                 <a class="top-bar-link" href="{{ route('karir.index') }}">Karir</a>
             </div>
             <div class="module module-social">
@@ -100,11 +100,11 @@
                 <li class="nav-item has-dropdown" data-hover="">
                     <a class="dropdown-toggle" data-toggle="dropdown"><span>Akademik</span></a>
                     <ul class="dropdown-menu">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('akademik.index', ['unit' => 'kb']) }}">
                                 <span>Kelompok Belajar</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ route('akademik.index', ['unit' => 'tk']) }}">
                                 <span>TK</span>
@@ -138,12 +138,11 @@
                 <li class="nav-item has-dropdown" data-hover="">
                     <a class="dropdown-toggle" data-toggle="dropdown"><span>Kegiatan</span></a>
                     <ul class="dropdown-menu">
-
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('kegiatan.index', ['unit' => 'kb']) }}">
                                 <span>Kelompok Belajar</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ route('kegiatan.index', ['unit' => 'tk']) }}">
                                 <span>TK</span>

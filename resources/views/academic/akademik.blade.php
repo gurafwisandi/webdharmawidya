@@ -46,24 +46,70 @@
                         </div>
                     @endforeach
                 </div>
-                {{-- <div class="offer-banner">
-                <div class="banner-body">
-                    <h3>Terakreditasi</h3>
-                    <p class="price-info"><span class="currency">A</span></p>
-                    <p>Kami tempat belajar terbaik</p>
-                </div>
-                <div class="banner-close"> <i class="fas fa-times"></i></div>
-            </div> --}}
             </div>
         </section>
     @endif
-    @if (count($services) > 0)
-        <section class="features features-2" id="features-2">
+
+    @if (count($struktur) > 0)
+        <section class="team team-1" id="team">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-6 offset-lg-3">
                         <div class="heading heading-7 text-center">
-                            <p class="heading-subtitle">Kelompok Belajar Dharma Widya</p>
+                            <p class="heading-subtitle">
+                                @if ($unit == 'tk')
+                                    Taman Kana-kanak (TK)
+                                @elseif ($unit == 'sd')
+                                    Sekolah Dasar (SD)
+                                @elseif ($unit == 'smp')
+                                    Sekolah Menengah Pertama (SMP)
+                                @elseif ($unit == 'smk')
+                                    Sekolah Menengah Kejuruan (SMK)
+                                @endif
+                                Dharma Widya
+                            </p>
+                            <h2 class="heading-title">Struktur Organisasi Sekolah</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel owl-carousel" data-slide="4" data-slide-rs="3" data-autoplay="true" data-nav="false"
+                    data-dots="false" data-space="30" data-loop="true" data-speed="800">
+                    @foreach ($struktur as $item)
+                        <div>
+                            <div class="member member-2">
+                                <div class="member-img"><img src="{{ asset('assets/files/guru/' . $item->image) }}"
+                                        alt="Member Richard Muldoone" />
+                                </div>
+                                <div class="member-content">
+                                    <div class="member-info"><a href="javascript:void(0)">{{ $item->name }}</a>
+                                        <p>{{ $item->department }}</p>
+                                    </div>
+                                    <div class="member-social">
+                                        @if ($item->fb)
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        @endif
+                                        @if ($item->x)
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                        @endif
+                                        @if ($item->ink)
+                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if (count($services) > 0)
+        <section class="features features-2" id="features-2" style="padding: 0px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 offset-lg-3">
+                        <div class="heading heading-7 text-center">
                             <h2 class="heading-title">Layanan dan Keunggulan</h2>
                         </div>
                     </div>
@@ -90,8 +136,6 @@
                                         <img src="{{ asset('assets/images/favicon/evaluation.png') }}"
                                             alt="{{ $item->title }}">
                                     </div>
-                                    {{-- <a class="feature-explore" href="javascript:void(0)"><i
-                                            class="icon-arrow-right"></i></a> --}}
                                 </div>
                             </div>
                         @endforeach
@@ -104,7 +148,7 @@
     <section class="service-single" id="service-single">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-4 order-1">
+                <div class="col-12 col-lg-4 order-0">
                     <div class="sidebar sidebar-service">
                         <div class="widget widget-services">
                             <div class="widget-title">
@@ -125,7 +169,7 @@
                     </div>
                 </div>
                 <input type="hidden" id="unit" value="{{ $unit }}">
-                <div class="col-12 col-lg-8 order-0 order-lg-2">
+                <div class="col-12 col-lg-8 order-1 order-lg-2">
                     <div class="service-entry">
                         <div class="entry-content">
                             <div id="prestasi-section" class="entry-introduction entry-infos">

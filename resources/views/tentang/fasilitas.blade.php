@@ -10,62 +10,60 @@
                                 <h2>Fasilitas</h2>
                             </div>
                             <div class="entry-bio">
-                                <p style="text-align:justify;">Yayasan Pendidikan Dharmawidya Sekolah Buddha berkomitmen
-                                    menyediakan fasilitas yang lengkap dan modern guna mendukung proses belajar mengajar
-                                    yang efektif serta pengembangan karakter siswa. Fasilitas ruang kelas dilengkapi dengan
-                                    peralatan multimedia seperti proyektor dan perangkat audio-visual untuk meningkatkan
-                                    interaksi dalam pembelajaran. Laboratorium komputer dan laboratorium sains menyediakan
-                                    sarana bagi siswa untuk mengasah kemampuan teknologi dan melakukan eksperimen ilmiah.
-                                    Selain itu, perpustakaan sekolah menawarkan koleksi buku serta sumber daya digital yang
-                                    bermanfaat untuk menunjang riset dan minat baca.</p>
-                                <p style="text-align:justify;">Untuk mendukung keseimbangan antara akademik dan
-                                    spiritualitas, sekolah menyediakan ruang meditasi dan doa, tempat siswa dapat
-                                    mempraktikkan ajaran Buddha. Kegiatan ekstrakurikuler dan olahraga juga difasilitasi
-                                    dengan aula serbaguna, lapangan olahraga, dan ruang kegiatan khusus. Kantin sekolah
-                                    menyediakan makanan sehat dan bergizi, serta taman hijau memberikan suasana segar yang
-                                    mendukung kenyamanan belajar. Dengan tambahan akses Wi-Fi gratis, ruang kesehatan (UKS),
-                                    dan area parkir yang aman, Yayasan Dharmawidya memastikan bahwa lingkungan sekolah
-                                    menjadi tempat yang kondusif untuk pertumbuhan akademis dan karakter siswa secara
-                                    menyeluruh.</p>
+                                {!! $fasilitas->description !!}
                             </div>
-                            <div class="entry-infos">
-                                <div class="row">
-                                    <div class="col-12 col-md-6">
-                                        <img src="{{ asset('assets/files/fasilitas/fasilitas.png') }}" alt="Image" />
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="prices-list">
-                                            <h3>Fasilitas:</h3>
-                                            <ul class="list-unstyled" style="text-align">
-                                                <li>Ruang Kelas Modern<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                                <li>Laboratorium Komputer<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                                <li>Laboratorium Sains<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                                <li>Perpustakaan<span class="price"><i class="fas fa-check"></i></span>
-                                                </li>
-                                                <li>Ruang Meditasi dan Doa<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                                <li>Aula Serbaguna<span class="price"><i class="fas fa-check"></i></span>
-                                                </li>
-                                                <li>Lapangan Olahraga<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                                <li>Ruang Kegiatan Ekstrakurikuler<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                                <li>Kantin Sehat<span class="price"><i class="fas fa-check"></i></span>
-                                                </li>
-                                                <li>Area Parkir yang Aman<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                                <li>Wi-Fi Gratis<span class="price"><i class="fas fa-check"></i></span>
-                                                </li>
-                                                <li>Ruang Kesehatan(UKS)<span class="price"><i
-                                                            class="fas fa-check"></i></span></li>
-                                            </ul>
+                            @if (count($fasilitas_image) > 0)
+                                <div class="entry-infos">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <section class="projects-gallery" id="projects-gallery" style="padding:0px;">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        @php
+                                                            $i = 0;
+                                                            $ii = 0;
+                                                        @endphp
+                                                        @foreach ($fasilitas_image as $item)
+                                                            <div class="col-12 col-md-12 col-lg-12"
+                                                                @if ($ii++ != 0) hidden @endif>
+                                                                <div class="project-panel">
+                                                                    <div class="project-img">
+                                                                        @if ($i++ < 1)
+                                                                            <img src="{{ asset('assets/files/fasilitas/' . $item->image) }}"
+                                                                                alt=" item" />
+                                                                        @endif
+                                                                        @if ($item->image)
+                                                                            <div class="project-zoom">
+                                                                                <i class="far fa-eye"></i>
+                                                                                <a class="img-gallery-item"
+                                                                                    href="{{ asset('assets/files/fasilitas/' . $item->image) }}"
+                                                                                    title="{{ $item->name }}"></a>
+                                                                            </div>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="prices-list">
+                                                <h3>Fasilitas:</h3>
+                                                <ul class="list-unstyled" style="text-align">
+                                                    @foreach ($fasilitas_image as $item)
+                                                        <li>
+                                                            {{ $item->name }}
+                                                            <span class="price"><i class="fas fa-check"></i></span>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>

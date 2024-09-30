@@ -22,25 +22,65 @@ class commentsSeeder extends Seeder
                 'name' => 'Sarah',
                 'unit' => 'tk',
                 'description' => 'Kegiatan ekstrakurikuler di sekolah sangat beragam dan menarik. Saya telah bergabung dengan klub debat dan merasakan perkembangan kemampuan berbicara dan berargumentasi saya secara signifikan.',
-            ], [
+            ],
+            [
                 'image' => '2.jpg',
                 'name' => 'Luna',
                 'unit' => 'tk',
                 'description' => 'Sekolah ini memberikan pengalaman belajar yang luar biasa! Dengan guru-guru yang berpengalaman dan fasilitas modern, saya merasa terdorong untuk meraih prestasi tertinggi.',
-            ], [
+            ],
+            [
                 'image' => '3.jpg',
                 'name' => 'Karlin',
-                'unit' => 'kb',
+                'unit' => 'sd',
                 'description' => 'Nulla dolore amet pariatur ipsum eu cillum ad excepteur fugiat. In eiusmod labore amet ipsum nostrud. Ex ullamco esse sit ut ad magna non eu ea ea. Est esse reprehenderit eiusmod minim Lorem aute aute. Quis fugiat ad dolore veniam enim sit veniam eu ullamco nisi aute ad. Minim est Lorem eu cillum ea mollit aliquip.',
-            ], [
+            ],
+            [
                 'image' => '4.jpg',
                 'name' => 'Sherly',
-                'unit' => 'kb',
+                'unit' => 'sd',
                 'description' => 'Aliquip consequat enim excepteur laboris incididunt velit incididunt ullamco laborum anim reprehenderit.',
-            ], [
+            ],
+            [
                 'image' => '5.jpg',
                 'name' => 'Baek',
-                'unit' => 'kb',
+                'unit' => 'sd',
+                'description' => 'Duis et laboris in pariatur pariatur officia non ex et ea minim nisi dolor ex.',
+            ],
+            [
+                'image' => '3.jpg',
+                'name' => 'Karlin',
+                'unit' => 'smp',
+                'description' => 'Nulla dolore amet pariatur ipsum eu cillum ad excepteur fugiat. In eiusmod labore amet ipsum nostrud. Ex ullamco esse sit ut ad magna non eu ea ea. Est esse reprehenderit eiusmod minim Lorem aute aute. Quis fugiat ad dolore veniam enim sit veniam eu ullamco nisi aute ad. Minim est Lorem eu cillum ea mollit aliquip.',
+            ],
+            [
+                'image' => '4.jpg',
+                'name' => 'Sherly',
+                'unit' => 'smp',
+                'description' => 'Aliquip consequat enim excepteur laboris incididunt velit incididunt ullamco laborum anim reprehenderit.',
+            ],
+            [
+                'image' => '5.jpg',
+                'name' => 'Baek',
+                'unit' => 'smk',
+                'description' => 'Duis et laboris in pariatur pariatur officia non ex et ea minim nisi dolor ex.',
+            ],
+            [
+                'image' => '3.jpg',
+                'name' => 'Karlin',
+                'unit' => 'smk',
+                'description' => 'Nulla dolore amet pariatur ipsum eu cillum ad excepteur fugiat. In eiusmod labore amet ipsum nostrud. Ex ullamco esse sit ut ad magna non eu ea ea. Est esse reprehenderit eiusmod minim Lorem aute aute. Quis fugiat ad dolore veniam enim sit veniam eu ullamco nisi aute ad. Minim est Lorem eu cillum ea mollit aliquip.',
+            ],
+            [
+                'image' => '4.jpg',
+                'name' => 'Sherly',
+                'unit' => 'smk',
+                'description' => 'Aliquip consequat enim excepteur laboris incididunt velit incididunt ullamco laborum anim reprehenderit.',
+            ],
+            [
+                'image' => '5.jpg',
+                'name' => 'Baek',
+                'unit' => 'smk',
                 'description' => 'Duis et laboris in pariatur pariatur officia non ex et ea minim nisi dolor ex.',
             ]
         ];

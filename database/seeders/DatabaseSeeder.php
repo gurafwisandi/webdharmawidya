@@ -29,6 +29,9 @@ class DatabaseSeeder extends Seeder
             EskulSeeder::class,
             taglineSeeder::class,
             CareersSeeder::class,
+            guruSeeder::class,
+            fasilitasSeeder::class,
+            fasilitasImageSeeder::class,
         ]);
     }
 }

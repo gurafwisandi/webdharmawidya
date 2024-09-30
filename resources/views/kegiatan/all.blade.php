@@ -52,8 +52,18 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
                     <div class="heading heading-13 text--center">
-                        <p class="heading-subtitle">Momen Kegiatan Siswa</p>
-                        <h2 class="heading-title">Daftar Kegiatan Foto dan Video {{ strtoupper($unit) }}</h2>
+                        <p class="heading-subtitle">Momen Kegiatan Siswa
+                            @if ($unit == 'tk')
+                                Taman Kana-kanak (TK)
+                            @elseif ($unit == 'sd')
+                                Sekolah Dasar (SD)
+                            @elseif ($unit == 'smp')
+                                Sekolah Menengah Pertama (SMP)
+                            @elseif ($unit == 'smk')
+                                Sekolah Menengah Kejuruan (SMK)
+                            @endif
+                        </p>
+                        <h2 class="heading-title">Daftar Kegiatan Foto dan Video</h2>
                     </div>
                 </div>
             </div>

@@ -38,11 +38,12 @@ Route::get('/detail/{id}', [KarirController::class, 'details'])->name('karir.det
 
 
 
+
+// ! HAPUS JIKA TIDAK DIGUNAKAN
 route::resource('/ppdb', PPDBController::class);
 Route::get('/ppdb/create', [LoginController::class, 'index'])->name('login');
 route::resource('/academic', AcademicController::class);
 route::resource('/galeri', GaleriController::class);
-
 Route::group(
     [
         'prefix'     => 'login',
@@ -58,7 +59,6 @@ Route::group(
         Route::post('/logout', [LoginController::class, 'logout'])->name('login.logout');
     }
 );
-
 Route::group(
     [
         // 'prefix'     => 'admin',

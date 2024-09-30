@@ -11,7 +11,23 @@
                         <div class="about-img">
                             <img class="img-fluid" src="{{ asset('assets/files/ketua/ketua.jpg') }}" alt="about Image"
                                 style="width: 600px" />
-                            <div class="offer-banner">
+                            @php
+                                preg_match(
+                                    '/(chrome|firefox|avantgo|blackberry|android|blazer|elaine|hiptop|iphone|ipod|kindle|midp|mmp|mobile|o2|opera mini|palm|palm os|pda|plucker|pocket|psp|smartphone|symbian|treo|up.browser|up.link|vodafone|wap|windows ce; iemobile|windows ce; ppc;|windows ce; smartphone;|xiino)/i',
+                                    $_SERVER['HTTP_USER_AGENT'],
+                                    $version,
+                                );
+                            @endphp
+                            @if ($version[1] == 'Android' || $version[1] == 'Mobile' || $version[1] == 'iPhone')
+                                @php
+                                    $hidden = 'hidden';
+                                @endphp
+                            @else
+                                @php
+                                    $hidden = null;
+                                @endphp
+                            @endif
+                            <div class="offer-banner" {{ $hidden }}>
                                 <div class="banner-body">
                                     <h3>{{ $founders ? $founders->name : '' }}</h3>
                                     <p>Ketua Yayasan</p>

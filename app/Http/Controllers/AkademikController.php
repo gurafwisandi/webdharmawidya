@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\commentsModel;
+use App\Models\CommentsModel;
 use App\Models\InformationModel;
 use App\Models\ServicesModel;
 use App\Models\SettingsModel;
 use App\Models\SlidersModel;
+use App\Models\StrukturModel;
 use Illuminate\Http\Request;
 
 class AkademikController extends Controller
@@ -23,8 +24,9 @@ class AkademikController extends Controller
             'settings' => SettingsModel::firstorfail(),
             'sliders' => SlidersModel::where('location', $this->default)->where('unit', $unit)->orderBy('id', 'desc')->limit('1')->get(),
             'services' => ServicesModel::where('unit', $unit)->get(),
-            'comments' => commentsModel::where('unit', $unit)->inRandomOrder()->limit(3)->get(),
+            'comments' => CommentsModel::where('unit', $unit)->inRandomOrder()->limit(3)->get(),
             'informations' => InformationModel::where('unit', $unit)->get(),
+            'struktur' => StrukturModel::where('unit', $unit)->get(),
         ];
         return view('academic.akademik')->with($data);
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ArticlesModel;
+use App\Models\CommentsModel;
 use App\Models\EskulModel;
 use App\Models\FoundersModel;
 use App\Models\GalleryModel;
@@ -31,6 +32,7 @@ class UtamaController extends Controller
             'founders' => FoundersModel::where('status', 1)->firstorfail(),
             'fotos' => GalleryModel::where('type', 'foto')->groupBy('activity_id')->orderBy('id', 'desc')->limit(6)->get(),
             'articles' => ArticlesModel::orderBy('id', 'desc')->limit(6)->get(),
+            'comments' => CommentsModel::inRandomOrder()->limit(7)->get(),
         ];
         return view('utama.data')->with($data);
     }
